@@ -44,13 +44,54 @@ footer{text-align:center;padding:20px;color:#60766a;font-size:13px}
 </section>
 </main>
 <footer>প্রিয় নাবী ﷺ • দুরুদ শরীফের উদ্যোগ</footer>
+
+
 <script>
-let count=0;
-function bn(n){return n.toLocaleString('bn-BD')}
-function show(){document.getElementById('personal').textContent=bn(count)}
-function addDurud(){count++;show()}
-function resetCount(){if(confirm('আপনি কি গণনা শূন্য করতে চান?')){count=0;show()}}
+const KEY = 'priyoNabiPersonalCount';
+
+let count = 0;
+
+try {
+  count = Math.max(
+    0,
+    Number(localStorage.getItem(KEY)) || 0
+  );
+} catch (e) {
+  count = 0;
+}
+
+function bn(n) {
+  return Math.floor(n).toLocaleString('bn-BD');
+}
+
+function show() {
+  document.getElementById('personal').textContent = bn(count);
+}
+
+function save() {
+  try {
+    localStorage.setItem(KEY, String(count));
+  } catch (e) {
+    alert('হিসাব সংরক্ষণ করা যায়নি।');
+  }
+}
+
+function addDurud() {
+  count++;
+  save();
+  show();
+}
+
+function resetCount() {
+  if (confirm('আপনি কি গণনা শূন্য করতে চান?')) {
+    count = 0;
+    save();
+    show();
+  }
+}
+
 show();
 </script>
+
 </body>
 </html>
