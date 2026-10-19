@@ -32,6 +32,9 @@ footer{text-align:center;padding:20px;color:#60766a;font-size:13px}
 <div class="number" id="personal">০</div>
 <button class="add" onclick="addDurud()">+ দুরুদ পড়েছি</button>
 <button class="small" onclick="resetCount()">গণনা শূন্য করুন</button>
+
+<button class="add" onclick="addPreviousDurud()">অফলাইনে পড়া দুরূদ যোগ করুন</button>
+
 </section>
 
 <section class="card">
@@ -88,6 +91,29 @@ function resetCount() {
     save();
     show();
   }
+function addPreviousDurud() {
+  const input = prompt('আগে যতবার দুরূদ পড়েছ, সংখ্যা লেখো:');
+
+  if (input === null || input.trim() === '') return;
+
+  const amount = Number(input);
+
+  if (!Number.isSafeInteger(amount) || amount <= 0) {
+    alert('সঠিক ধনাত্মক পূর্ণসংখ্যা লেখো।');
+    return;
+  }
+
+  if (!Number.isSafeInteger(count + amount)) {
+    alert('সংখ্যাটি অনেক বড়। ছোট সংখ্যা দিয়ে চেষ্টা করো।');
+    return;
+  }
+
+  count += amount;
+  save();
+  show();
+  alert('আলহামদুলিল্লাহ! আগের পড়া দুরূদ যোগ হয়েছে।');
+}
+
 }
 
 show();
