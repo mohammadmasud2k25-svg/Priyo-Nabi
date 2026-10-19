@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>প্রিয় নাবী ﷺ</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f2f7f2;color:#173d2e}
+header{background:#10543b;color:white;text-align:center;padding:28px 15px}
+header h1{margin:0;font-size:30px}
+header p{margin-bottom:0}
+main{max-width:520px;margin:20px auto;padding:0 15px}
+.card{background:white;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 3px 12px #0000000d;text-align:center}
+h2{font-size:20px}
+.number{font-size:25px;font-weight:bold;margin:16px 0;overflow-wrap:anywhere}
+button{border:0;border-radius:12px;padding:14px 22px;font-size:17px;cursor:pointer}
+.add{background:#137a50;color:white;width:100%;font-size:20px}
+.small{background:#e3eee7;color:#174a35;margin:5px}
+.target{font-size:14px;color:#567363}
+footer{text-align:center;padding:20px;color:#60766a;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>প্রিয় নাবী ﷺ</h1>
+<p>ভালোবাসায় দুরুদ শরীফ পাঠ করি</p>
+</header>
+<main>
+<section class="card">
+<h2>আমার দুরুদ পাঠ</h2>
+<p class="target">এই ডিভাইসে বর্তমান সেশনের গণনা</p>
+<div class="number" id="personal">০</div>
+<button class="add" onclick="addDurud()">+ দুরুদ পড়েছি</button>
+<button class="small" onclick="resetCount()">গণনা শূন্য করুন</button>
+</section>
+
+<section class="card">
+<h2>🌙 সবার সম্মিলিত চ্যালেঞ্জ</h2>
+<p class="target">আমাদের লক্ষ্য</p>
+<div class="number">১,০০০ কোটি</div>
+<p>১০,০০০,০০০,০০০ বার দুরুদ শরীফ</p>
+<div class="number" id="total">০</div>
+<p class="target">সম্মিলিত পাঠের নমুনা — অনলাইন হিসাব এখনো যুক্ত হয়নি</p>
+</section>
+</main>
+<footer>প্রিয় নাবী ﷺ • দুরুদ শরীফের উদ্যোগ</footer>
+<script>
+let count=0;
+function bn(n){return n.toLocaleString('bn-BD')}
+function show(){document.getElementById('personal').textContent=bn(count)}
+function addDurud(){count++;show()}
+function resetCount(){if(confirm('আপনি কি গণনা শূন্য করতে চান?')){count=0;show()}}
+show();
+</script>
+</body>
+</html>
