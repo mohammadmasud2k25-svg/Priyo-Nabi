@@ -1,122 +1,352 @@
- lang="bn">
+
+<!DOCTYPE html>
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075e46">
 <title>প্রিয় নাবী ﷺ</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f2f7f2;color:#173d2e}
-header{background:#10543b;color:white;text-align:center;padding:28px 15px}
-header h1{margin:0;font-size:30px}
-header p{margin-bottom:0}
-main{max-width:520px;margin:20px auto;padding:0 15px}
-.card{background:white;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 3px 12px #0000000d;text-align:center}
-h2{font-size:20px}
-.number{font-size:25px;font-weight:bold;margin:16px 0;overflow-wrap:anywhere}
-button{border:0;border-radius:12px;padding:14px 22px;font-size:17px;cursor:pointer}
-.add{background:#137a50;color:white;width:100%;font-size:20px}
-.small{background:#e3eee7;color:#174a35;margin:5px}
-.target{font-size:14px;color:#567363}
-footer{text-align:center;padding:20px;color:#60766a;font-size:13px}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f8f4;
+  color: #173b2d;
+}
+
+header {
+  background: #075e46;
+  color: white;
+  text-align: center;
+  padding: 28px 12px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+header p { margin: 0; }
+
+main {
+  max-width: 560px;
+  margin: auto;
+  padding: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 12px #0000000c;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.arabic {
+  font-size: 27px;
+  line-height: 2;
+  text-align: center;
+  color: #075e46;
+}
+
+.center { text-align: center; }
+
+.number {
+  font-size: 42px;
+  font-weight: bold;
+  color: #075e46;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 10px;
+  margin-top: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary {
+  background: #087653;
+  color: white;
+  font-size: 19px;
+  padding: 16px;
+}
+
+.secondary {
+  background: #e4f2e9;
+  color: #075e46;
+}
+
+.danger {
+  background: #fff0ee;
+  color: #a52d22;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #b7cdbf;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 12px 0 4px;
+}
+
+.note {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #53665b;
+}
+
+.target {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: #075e46;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #53665b;
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<h1>প্রিয় নাবী ﷺ</h1>
-<p>ভালোবাসায় দুরুদ শরীফ পাঠ করি</p>
+  <h1>প্রিয় নাবী ﷺ</h1>
+  <p>ভালোবাসায় দুরূদ শরীফ</p>
 </header>
+
 <main>
-<section class="card">
-<h2>আমার দুরুদ পাঠ</h2>
-<p class="target">এই ডিভাইসে বর্তমান সেশনের গণনা</p>
-<div class="number" id="personal">০</div>
-<button class="add" onclick="addDurud()">+ দুরুদ পড়েছি</button>
-<button class="small" onclick="resetCount()">গণনা শূন্য করুন</button>
 
-<button class="add" onclick="addPreviousDurud()">অফলাইনে পড়া দুরূদ যোগ করুন</button>
+  <section class="card">
+    <h2 class="center">দুরূদ শরীফ</h2>
 
-</section>
+    <div class="arabic" lang="ar" dir="rtl">
+      اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ
+      وَعَلَىٰ آلِ مُحَمَّدٍ
+      كَمَا صَلَّيْتَ عَلَىٰ إِبْرَاهِيمَ
+      وَعَلَىٰ آلِ إِبْرَاهِيمَ
+      إِنَّكَ حَمِيدٌ مَجِيدٌ
+    </div>
 
-<section class="card">
-<h2>🌙 সবার সম্মিলিত চ্যালেঞ্জ</h2>
-<p class="target">আমাদের লক্ষ্য</p>
-<div class="number">১,০০০ কোটি</div>
-<p>১০,০০০,০০০,০০০ বার দুরুদ শরীফ</p>
-<div class="number" id="total">০</div>
-<p class="target">সম্মিলিত পাঠের নমুনা — অনলাইন হিসাব এখনো যুক্ত হয়নি</p>
-</section>
+    <h3>বাংলা উচ্চারণ</h3>
+    <p>
+      আল্লাহুম্মা সাল্লি আলা মুহাম্মাদিওঁ
+      ওয়া আলা আ-লি মুহাম্মাদিন,
+      কামা সাল্লাইতা আলা ইবরাহীমা
+      ওয়া আলা আ-লি ইবরাহীম,
+      ইন্নাকা হামীদুম মাজীদ।
+    </p>
+
+    <h3>অর্থ</h3>
+    <p>
+      হে আল্লাহ! আপনি মুহাম্মদ ﷺ ও তাঁর পরিবারবর্গের
+      ওপর রহমত বর্ষণ করুন, যেমন আপনি ইবরাহীম (আ.) ও
+      তাঁর পরিবারবর্গের ওপর রহমত বর্ষণ করেছেন।
+      নিশ্চয়ই আপনি প্রশংসিত, মহিমান্বিত।
+    </p>
+  </section>
+
+  <section class="card center">
+    <h2>আমার দুরূদ পাঠ</h2>
+    <div class="number" id="personal">০</div>
+    <p class="note">ব্যক্তিগত মোট দুরূদ</p>
+
+    <button class="primary" onclick="addOne()">
+      + দুরূদ পড়েছি
+    </button>
+
+    <button class="danger" onclick="resetCounter()">
+      ব্যক্তিগত কাউন্টার শূন্য করুন
+    </button>
+  </section>
+
+  <section class="card">
+    <h2>অফলাইনে পড়া দুরূদ যোগ করুন</h2>
+    <p class="note">
+      মোবাইল ছাড়া আগে যতবার দুরূদ পড়েছেন,
+      সেই সংখ্যা এখানে লিখে যোগ করুন।
+    </p>
+
+    <label for="previousCount">কতবার দুরূদ পড়েছেন?</label>
+    <input
+      id="previousCount"
+      type="number"
+      min="1"
+      step="1"
+      inputmode="numeric"
+      placeholder="যেমন: ৫০০"
+    >
+
+    <button class="primary" onclick="addPrevious()">
+      দুরূদ যোগ করুন
+    </button>
+
+    <p class="center">
+      অফলাইনে যোগ করা মোট:
+      <strong id="previousTotal">০</strong>
+    </p>
+
+    <button class="danger" onclick="clearPrevious()">
+      অফলাইনে যোগ করা হিসাব মুছুন
+    </button>
+  </section>
+
+  <section class="card">
+    <h2 class="center">সম্মিলিত দুরূদ চ্যালেঞ্জ</h2>
+    <div class="target">লক্ষ্য: ১ হাজার কোটি</div>
+    <p class="center">
+      ১০,০০০,০০০,০০০ দুরূদ শরীফ
+    </p>
+    <p class="note center">
+      সবার সম্মিলিত অনলাইন হিসাব এখনো যুক্ত হয়নি।
+      এই অংশে বর্তমানে প্রকৃত সম্মিলিত সংখ্যা দেখানো হচ্ছে না।
+    </p>
+  </section>
+
 </main>
-<footer>প্রিয় নাবী ﷺ • দুরুদ শরীফের উদ্যোগ</footer>
 
+<footer>
+  প্রিয় নাবী ﷺ | আল্লাহ আমাদের আমল কবুল করুন
+</footer>
 
 <script>
-const KEY = 'priyoNabiPersonalCount';
+const KEY_TAP = "priyoNabiTapCount";
+const KEY_PREVIOUS = "priyoNabiPreviousCount";
 
-let count = 0;
-
-try {
-  count = Math.max(
-    0,
-    Number(localStorage.getItem(KEY)) || 0
-  );
-} catch (e) {
-  count = 0;
-}
-
-function bn(n) {
-  return Math.floor(n).toLocaleString('bn-BD');
-}
-
-function show() {
-  document.getElementById('personal').textContent = bn(count);
-}
-
-function save() {
+function readNumber(key) {
   try {
-    localStorage.setItem(KEY, String(count));
+    const value = Number(localStorage.getItem(key));
+    if (Number.isSafeInteger(value) && value >= 0) {
+      return value;
+    }
+  } catch (e) {}
+  return 0;
+}
+
+let tapCount = readNumber(KEY_TAP);
+let previousCount = readNumber(KEY_PREVIOUS);
+
+function bn(number) {
+  return number.toLocaleString("bn-BD");
+}
+
+function saveCounts() {
+  try {
+    localStorage.setItem(KEY_TAP, String(tapCount));
+    localStorage.setItem(KEY_PREVIOUS, String(previousCount));
+    return true;
   } catch (e) {
-    alert('হিসাব সংরক্ষণ করা যায়নি।');
+    alert("হিসাব সংরক্ষণ করা যায়নি।");
+    return false;
   }
 }
 
-function addDurud() {
-  count++;
-  save();
-  show();
+function showCounts() {
+  document.getElementById("personal").textContent =
+    bn(tapCount + previousCount);
+
+  document.getElementById("previousTotal").textContent =
+    bn(previousCount);
 }
 
-function resetCount() {
-  if (confirm('আপনি কি গণনা শূন্য করতে চান?')) {
-    count = 0;
-    save();
-    show();
-  }
-function addPreviousDurud() {
-  const input = prompt('আগে যতবার দুরূদ পড়েছ, সংখ্যা লেখো:');
-
-  if (input === null || input.trim() === '') return;
-
-  const amount = Number(input);
-
-  if (!Number.isSafeInteger(amount) || amount <= 0) {
-    alert('সঠিক ধনাত্মক পূর্ণসংখ্যা লেখো।');
+function addOne() {
+  if (tapCount >= Number.MAX_SAFE_INTEGER) {
+    alert("সর্বোচ্চ সংখ্যা পূর্ণ হয়েছে।");
     return;
   }
 
-  if (!Number.isSafeInteger(count + amount)) {
-    alert('সংখ্যাটি অনেক বড়। ছোট সংখ্যা দিয়ে চেষ্টা করো।');
+  tapCount++;
+  saveCounts();
+  showCounts();
+}
+
+function addPrevious() {
+  const field = document.getElementById("previousCount");
+  const raw = field.value.trim();
+  const amount = Number(raw);
+
+  if (
+    raw === "" ||
+    !Number.isSafeInteger(amount) ||
+    amount <= 0
+  ) {
+    alert("অনুগ্রহ করে সঠিক সংখ্যা লিখুন।");
     return;
   }
 
-  count += amount;
-  save();
-  show();
-  alert('আলহামদুলিল্লাহ! আগের পড়া দুরূদ যোগ হয়েছে।');
+  if (
+    amount > Number.MAX_SAFE_INTEGER - tapCount - previousCount
+  ) {
+    alert("সংখ্যাটি অনেক বড়।");
+    return;
+  }
+
+  previousCount += amount;
+
+  if (saveCounts()) {
+    field.value = "";
+    showCounts();
+    alert("আলহামদুলিল্লাহ! দুরূদ যোগ হয়েছে।");
+  } else {
+    previousCount -= amount;
+  }
 }
 
+function clearPrevious() {
+  if (previousCount === 0) {
+    alert("অফলাইনে যোগ করা কোনো হিসাব নেই।");
+    return;
+  }
+
+  if (confirm("শুধু অফলাইনে যোগ করা হিসাব মুছবেন?")) {
+    const oldValue = previousCount;
+    previousCount = 0;
+
+    if (saveCounts()) {
+      showCounts();
+      alert("অফলাইনে যোগ করা হিসাব মুছে দেওয়া হয়েছে।");
+    } else {
+      previousCount = oldValue;
+    }
+  }
 }
 
-show();
+function resetCounter() {
+  if (confirm("ব্যক্তিগত সম্পূর্ণ হিসাব শূন্য করবেন?")) {
+    const oldTap = tapCount;
+    const oldPrevious = previousCount;
+
+    tapCount = 0;
+    previousCount = 0;
+
+    if (saveCounts()) {
+      showCounts();
+    } else {
+      tapCount = oldTap;
+      previousCount = oldPrevious;
+    }
+  }
+}
+
+showCounts();
 </script>
 
 </body>
